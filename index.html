@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayyanar Vilas Kadalai Mittai & Sarbath Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <h1>Ayyanar Vilas Kadalai Mittai &amp; Sarbath Company</h1>
+        <a class="btn btn--whatsapp" id="whatsappButton" href="#" target="_blank" rel="noopener noreferrer">WhatsApp Business</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero__content">
+        <div>
+          <p class="tag">Traditional Taste • Fresh Quality • Online Orders</p>
+          <h2>Authentic Kadalai Mittai and Refreshing Sarbath for Every Occasion</h2>
+          <p>
+            Browse products, add to cart, place online orders, and quickly connect with us on WhatsApp.
+          </p>
+          <button class="btn" id="shopNowBtn">Shop Now</button>
+        </div>
+        <div class="hero__stats">
+          <div><strong id="productCount">0</strong><span>Products</span></div>
+          <div><strong>100%</strong><span>Customizable Source Code</span></div>
+          <div><strong>24x7</strong><span>WhatsApp Order Support</span></div>
+        </div>
+      </div>
+    </section>
+
+    <main class="container main-layout">
+      <section class="products" id="productsSection">
+        <div class="section-title">
+          <h3>Our Products</h3>
+          <input type="search" id="searchInput" placeholder="Search products..." />
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <aside class="cart-panel">
+        <h3>Your Cart</h3>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary">
+          <p>Subtotal <span id="subtotal">₹0</span></p>
+          <p>Delivery <span id="delivery">₹0</span></p>
+          <p class="total">Total <span id="grandTotal">₹0</span></p>
+        </div>
+        <button class="btn btn--full" id="checkoutBtn">Proceed to Checkout</button>
+      </aside>
+    </main>
+
+    <section class="about container">
+      <h3>About Our Business</h3>
+      <p>
+        Ayyanar Vilas Kadalai Mittai &amp; Sarbath Company is proudly listed on Google Business.
+        This website is built with plain HTML, CSS, and JavaScript so you fully own the code and can edit anything anytime.
+      </p>
+    </section>
+
+    <div class="modal hidden" id="checkoutModal">
+      <div class="modal__content">
+        <button class="modal__close" id="closeModalBtn" aria-label="Close">×</button>
+        <h3>Checkout</h3>
+        <form id="checkoutForm">
+          <label>
+            Customer Name
+            <input type="text" name="customerName" required />
+          </label>
+          <label>
+            Phone Number
+            <input type="tel" name="phone" pattern="[0-9]{10}" required />
+          </label>
+          <label>
+            Delivery Address
+            <textarea name="address" rows="3" required></textarea>
+          </label>
+          <label>
+            Payment Method
+            <select name="paymentMethod" id="paymentMethod" required>
+              <option value="cod">Cash on Delivery</option>
+              <option value="upi">UPI</option>
+              <option value="razorpay">Razorpay (Card/UPI/Netbanking)</option>
+            </select>
+          </label>
+          <button class="btn btn--full" type="submit">Place Order</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© <span id="year"></span> Ayyanar Vilas Kadalai Mittai &amp; Sarbath Company</p>
+      </div>
+    </footer>
+  </body>
+</html>
